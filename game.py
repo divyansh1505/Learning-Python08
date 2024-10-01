@@ -3,12 +3,30 @@ import random
 ans = input("Do you trust your instincts?(Yes/No) : " ).lower()
 
 if (ans == "Yes" or ans == "yes"):
-       ans2 = input("Type 'Play' to play the game! : ")
+       ans2 = input("Type 'Play' to play the game! : ").lower()
        if (ans2 == "Play" or ans2 == "play"):
-              print("Instructions : A random number will be generated between 1 to 100. You have to guess it")
+              print("Instructions : A random number will be generated from your chosen range. You have to guess it")
+              
+              print ("""Choose range set : 
+                       a = 1-100
+                       b = 1-250
+                       c = 1-500
+                       d = 1-1000
+                       """)
+              rnge = (input("So you decided? : ")).lower()
+              if (rnge == "a"):
+                    number = random.randint(1,100)
+              elif (rnge == "b"):
+                     number = random.randint(1,250)
+              elif (rnge == "c"):
+                     number = random.randint(1,500)
+              elif (rnge == "d"):
+                     number = random.randint(1,1000)
+                    
+
               Guess = int(input("Enter your guess : "))
               Guess_count = 1
-              number = random.randint(1, 100)
+            
               if(number == Guess):
                        print("YOU GOT IT.")
                     
